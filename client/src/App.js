@@ -7,7 +7,14 @@ import {
   useLocation,
 } from "react-router-dom";
 import { GlobalStyle } from "./styles";
-import { Login, Profile, TopArtists, TopTracks } from "./pages";
+import {
+  Login,
+  Profile,
+  TopArtists,
+  TopTracks,
+  Playlists,
+  Playlist,
+} from "./pages";
 
 import styled from "styled-components/macro";
 
@@ -58,9 +65,9 @@ function App() {
               <ScrollToTop />
               <Routes>
                 <Route path="/top-artists" element={<TopArtists />}></Route>
-
                 <Route path="/top-tracks" element={<TopTracks />}></Route>
-
+                <Route path="/playlists/:id" element={<Playlist />}></Route>
+                <Route path="/playlists" element={<Playlists />}></Route>
                 <Route excat path="/" element={<Profile />}></Route>
               </Routes>
             </Router>
