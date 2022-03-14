@@ -1,7 +1,43 @@
 import { useEffect, useState } from "react";
 import { accessToken, logout } from "./spotify";
-import logo from "./logo.svg";
-import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { GlobalStyle } from "./styles";
+import { Login, Profile, TopArtists } from "./pages";
+
+import styled from "styled-components/macro";
+
+const StyledLogoutButton = styled.button`
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+  font-size: var(--fz-sm);
+  font-weight: 700;
+  border-radius: var(--border-radius-pill);
+  z-index: 10;
+  @media (min-width: 768px) {
+    right: var(--spacing-lg);
+  }
+`;
+
+// Scroll to top of page when changing routes
+// https://reactrouter.com/web/guides/scroll-restoration/scroll-to-top
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [token, setToken] = useState(null);
@@ -11,21 +47,22 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <GlobalStyle />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         {!token ? (
-          <a
-            className="App-link"
-            href="http://localhost:8888/login"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Log in to Spotify
-          </a>
+          <Login />
         ) : (
           <>
-            <h1>Logged in !</h1>
-            <button onClick={logout}>Log Out</button>
+            <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
+            <Router>
+              <ScrollToTop />
+              <Routes>
+                <Route path="/top-artists" element={<TopArtists />}></Route>
+              </Routes>
+              <Routes>
+                <Route path="/" element={<Profile />}></Route>
+              </Routes>
+            </Router>
           </>
         )}
       </header>
