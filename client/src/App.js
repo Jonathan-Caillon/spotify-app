@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { GlobalStyle } from "./styles";
-import { Login, Profile, TopArtists } from "./pages";
+import { Login, Profile, TopArtists, TopTracks } from "./pages";
 
 import styled from "styled-components/macro";
 
@@ -58,9 +58,10 @@ function App() {
               <ScrollToTop />
               <Routes>
                 <Route path="/top-artists" element={<TopArtists />}></Route>
-              </Routes>
-              <Routes>
-                <Route path="/" element={<Profile />}></Route>
+
+                <Route path="/top-tracks" element={<TopTracks />}></Route>
+
+                <Route excat path="/" element={<Profile />}></Route>
               </Routes>
             </Router>
           </>
