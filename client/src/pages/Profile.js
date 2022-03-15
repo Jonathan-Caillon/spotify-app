@@ -39,16 +39,23 @@ const Profile = () => {
     catchErrors(fetchData());
   }, []);
 
+  console.log(profile);
   return (
     <>
       {profile && (
         <>
           <StyledHeader type="user">
             <div className="header__inner">
-              {profile.images.length && profile.images[0].url && (
+              {profile.images.length != 0 && profile.images[0].url ? (
                 <img
                   className="header__img"
                   src={profile.images[0].url}
+                  alt="Avatar"
+                />
+              ) : (
+                <img
+                  className="header__img"
+                  src="/avatar/blank-profile.png"
                   alt="Avatar"
                 />
               )}
