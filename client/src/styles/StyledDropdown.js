@@ -1,13 +1,15 @@
 import styled from "styled-components/macro";
 
 const StyledDropdown = styled.div`
-  position: absolute;
-  top: 0;
-  right: var(--spacing-md);
-  z-index: 1;
+  position: relative;
+  width: fit-content;
+  margin-bottom: var(--spacing-lg);
 
   @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
     right: var(--spacing-xxl);
+    z-index: 1;
   }
 
   &:after {

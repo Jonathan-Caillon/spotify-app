@@ -112,7 +112,6 @@ const Playlist = () => {
                 />
               )}
               <div>
-                <div className="header__overline">Playlist</div>
                 <h1 className="header__name">{playlist.name}</h1>
                 <p className="header__meta">
                   {playlist.followers.total ? (

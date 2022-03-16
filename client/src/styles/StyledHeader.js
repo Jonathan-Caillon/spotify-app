@@ -6,13 +6,6 @@ const StyledHeader = styled.header`
   position: relative;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
   background-color: var(--grey);
-  height: 30vh;
-  max-height: 500px;
-  min-height: 250px;
-
-  @media (min-width: 768px) {
-    min-height: 340px;
-  }
 
   &:after {
     content: "";
@@ -28,7 +21,8 @@ const StyledHeader = styled.header`
 
   .header__inner {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: var(--site-max-width);
     margin: 0 auto;
@@ -41,9 +35,8 @@ const StyledHeader = styled.header`
 
   img.header__img {
     width: 20%;
-    max-width: 250px;
+    max-width: 200px;
     min-width: 120px;
-    margin-right: var(--spacing-lg);
     box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
     background-color: var(--dark-grey);
     border-radius: ${(props) => (props.type === "user" ? "50%" : "0")};
@@ -61,10 +54,10 @@ const StyledHeader = styled.header`
   }
 
   h1.header__name {
-    font-size: clamp(2.5rem, 10vw, 6rem);
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
     font-weight: 900;
     line-height: 1;
-    margin: 0 0 var(--spacing-xs) 0;
+    margin: var(--spacing-xs) 0;
 
     @media (min-width: 768px) {
       margin: 0 0 var(--spacing-xs) -5px;
