@@ -40,10 +40,24 @@ const StyledHeader = styled.header`
     box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
     background-color: var(--dark-grey);
     border-radius: ${(props) => (props.type === "user" ? "50%" : "0")};
+  }
 
-    @media (min-width: 768px) {
-      margin-right: var(--spacing-xl);
-    }
+  .header__no_img {
+    width: 20%;
+    aspect-ratio: 1;
+    max-width: 200px;
+    min-width: 120px;
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__no_img svg {
+    width: 60%;
   }
 
   .header__overline {

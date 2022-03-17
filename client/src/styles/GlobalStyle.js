@@ -116,6 +116,12 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     padding: var(--spacing-xxl);
   }
+@media (min-width: 768px) {
+  .App-header {
+    padding-left: 100px;
+  }
+}
+
 `;
 
 export default GlobalStyle;

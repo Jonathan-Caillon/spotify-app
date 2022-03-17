@@ -8,7 +8,7 @@ const StyledTrackList = styled.ul`
   .track__item {
     display: grid;
     align-items: center;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 20px 1fr auto;
     grid-gap: var(--spacing-md);
     padding: var(--spacing-xs);
     color: var(--light-grey);
@@ -65,13 +65,15 @@ const StyledTrackList = styled.ul`
   }
 
   .track__item__duration {
-    display: none;
+    display: flex;
+    justify-content: flex-end;
+    font-variant-numeric: tabular-nums;
 
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
       display: flex;
       justify-content: flex-end;
       font-variant-numeric: tabular-nums;
-    }
+    } */
   }
 `;
 

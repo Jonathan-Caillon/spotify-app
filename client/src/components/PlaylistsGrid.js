@@ -19,7 +19,7 @@ const PlaylistsGrid = ({ playlists }) => (
               <h3 className="grid__item__name overflow-ellipsis">
                 {playlist.name}
               </h3>
-              <p className="grid__item__label">Playlist</p>
+              <p className="grid__item__label">{playlist.type}</p>
             </Link>
           </li>
         ))}

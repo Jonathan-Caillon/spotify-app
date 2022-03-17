@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { GlobalStyle } from "./styles";
+import { SideMenu } from "./components";
 import {
   Login,
   Profile,
@@ -62,6 +63,7 @@ function App() {
           <>
             <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
             <Router>
+              <SideMenu />
               <ScrollToTop />
               <Routes>
                 <Route path="/top-artists" element={<TopArtists />}></Route>

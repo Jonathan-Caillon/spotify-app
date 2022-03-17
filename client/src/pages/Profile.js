@@ -39,24 +39,26 @@ const Profile = () => {
     catchErrors(fetchData());
   }, []);
 
+  console.log(profile);
+
   return (
     <>
       {profile ? (
         <>
           <StyledHeader type="user">
             <div className="header__inner">
-              {profile.images.length != 0 && profile.images[0].url ? (
+              {profile.images.length !== 0 && profile.images[0].url ? (
                 <img
                   className="header__img"
                   src={profile.images[0].url}
                   alt="Avatar"
                 />
               ) : (
-                <img
-                  className="header__img"
-                  src="/avatar/blank-profile.png"
-                  alt="Avatar"
-                />
+                <div className="header__no_img">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z" />
+                  </svg>
+                </div>
               )}
               <div>
                 <h1 className="header__name">{profile.display_name}</h1>
@@ -82,7 +84,7 @@ const Profile = () => {
                 title="Top artists this month"
                 seeAllLink="/top-artists"
               >
-                <ArtistsGrid artists={topArtists.items.slice(0, 8)} />
+                <ArtistsGrid artists={topArtists.items.slice(0, 6)} />
               </SectionWrapper>
 
               <SectionWrapper
@@ -93,7 +95,7 @@ const Profile = () => {
               </SectionWrapper>
 
               <SectionWrapper title="Playlists" seeAllLink="/playlists">
-                <PlaylistsGrid playlists={playlists.items.slice(0, 10)} />
+                <PlaylistsGrid playlists={playlists.items.slice(0, 6)} />
               </SectionWrapper>
             </main>
           ) : (
