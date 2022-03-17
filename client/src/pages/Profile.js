@@ -5,6 +5,7 @@ import {
   getCurrentUserPlaylists,
   getTopArtists,
   getTopTracks,
+  getRecentlyPlayed,
 } from "../spotify";
 import { StyledHeader } from "../styles";
 import {
@@ -20,6 +21,7 @@ const Profile = () => {
   const [playlists, setPlaylists] = useState(null);
   const [topArtists, setTopArtists] = useState(null);
   const [topTracks, setTopTracks] = useState(null);
+  const [recentlyPlayed, setRecentlyPlayed] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,13 +36,14 @@ const Profile = () => {
 
       const userTopTracks = await getTopTracks();
       setTopTracks(userTopTracks.data);
+
+      const userRecentlyPlayed = await getRecentlyPlayed();
+      setRecentlyPlayed(userRecentlyPlayed.data);
     };
 
     catchErrors(fetchData());
   }, []);
-
-  console.log(profile);
-
+  console.log(recentlyPlayed);
   return (
     <>
       {profile ? (

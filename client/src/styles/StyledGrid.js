@@ -5,15 +5,15 @@ const StyledGrid = styled.ul`
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
   grid-gap: var(--spacing-lg);
 
   /* grid-gap: var(--spacing-sm); */
 
-  /* @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
     grid-gap: var(--spacing-lg);
-  } */
+  }
 
   .grid__item {
     background-color: var(--near-black);

@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
   .header__no_img {
     width: 20%;
     aspect-ratio: 1;
-    max-width: 200px;
+    max-width: 160px;
     min-width: 120px;
     box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
     border: 2px solid white;

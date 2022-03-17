@@ -72,7 +72,7 @@ const StyledSideMenu = styled.div`
   .menu ul li:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(24, 24, 24);
-    border-left: 5px solid rgb(30, 215, 96);
+    border-left: 5px solid #1db954;
     text-decoration: none;
   }
   .menu ul li:hover svg {
@@ -108,7 +108,7 @@ const StyledSideMenu = styled.div`
     }
     .menu ul li:hover {
       border-left: none;
-      border-top: 5px solid rgb(30, 215, 96);
+      border-top: 5px solid #1db954;
     }
   } ;
 `;
