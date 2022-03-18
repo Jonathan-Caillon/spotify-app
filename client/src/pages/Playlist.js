@@ -101,58 +101,71 @@ const Playlist = () => {
   return (
     <>
       {playlist ? (
-        <>
-          <StyledHeader>
-            <div className="header__inner">
-              {playlist.images.length && playlist.images[0].url && (
-                <img
-                  className="header__img"
-                  src={playlist.images[0].url}
-                  alt="Playlist Artwork"
-                />
-              )}
-              <div>
-                <h1 className="header__name">{playlist.name}</h1>
-                <p className="header__meta">
-                  {playlist.followers.total ? (
+        (console.log(playlist),
+        (
+          <>
+            <StyledHeader>
+              <div className="header__inner">
+                {playlist.images.length && playlist.images[0].url && (
+                  <img
+                    className="header__img"
+                    src={playlist.images[0].url}
+                    alt="Playlist Artwork"
+                  />
+                )}
+                <div>
+                  <h1 className="header__name">{playlist.name}</h1>
+                  <p className="header__meta">
                     <span>
-                      {playlist.followers.total}{" "}
-                      {`follower${playlist.followers.total !== 1 ? "s" : ""}`}
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={playlist.owner.external_urls.spotify}
+                        title={playlist.owner.display_name + "'s Profile"}
+                      >
+                        {playlist.owner.display_name}
+                      </a>
                     </span>
-                  ) : null}
-                  <span>
-                    {playlist.tracks.total}{" "}
-                    {`song${playlist.tracks.total !== 1 ? "s" : ""}`}
-                  </span>
-                </p>
+                    {playlist.followers.total ? (
+                      <span>
+                        {playlist.followers.total}{" "}
+                        {`follower${playlist.followers.total !== 1 ? "s" : ""}`}
+                      </span>
+                    ) : null}
+                    <span>
+                      {playlist.tracks.total}{" "}
+                      {`song${playlist.tracks.total !== 1 ? "s" : ""}`}
+                    </span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </StyledHeader>
+            </StyledHeader>
 
-          <main>
-            <SectionWrapper title="Playlist" breadcrumb={true}>
-              <StyledDropdown active={!!sortValue}>
-                <label className="sr-only" htmlFor="order-select">
-                  Sort tracks
-                </label>
-                <select
-                  name="track-order"
-                  id="order-select"
-                  onChange={(e) => setSortValue(e.target.value)}
-                >
-                  <option value="">Sort tracks</option>
-                  {sortOptions.map((option, i) => (
-                    <option value={option} key={i}>
-                      {`${option.charAt(0).toUpperCase()}${option.slice(1)}`}
-                    </option>
-                  ))}
-                </select>
-              </StyledDropdown>
+            <main>
+              <SectionWrapper title="Playlist" breadcrumb={true}>
+                <StyledDropdown active={!!sortValue}>
+                  <label className="sr-only" htmlFor="order-select">
+                    Sort tracks
+                  </label>
+                  <select
+                    name="track-order"
+                    id="order-select"
+                    onChange={(e) => setSortValue(e.target.value)}
+                  >
+                    <option value="">Sort tracks</option>
+                    {sortOptions.map((option, i) => (
+                      <option value={option} key={i}>
+                        {`${option.charAt(0).toUpperCase()}${option.slice(1)}`}
+                      </option>
+                    ))}
+                  </select>
+                </StyledDropdown>
 
-              {sortedTracks && <TrackList tracks={sortedTracks} />}
-            </SectionWrapper>
-          </main>
-        </>
+                {sortedTracks && <TrackList tracks={sortedTracks} />}
+              </SectionWrapper>
+            </main>
+          </>
+        ))
       ) : (
         <Loader />
       )}

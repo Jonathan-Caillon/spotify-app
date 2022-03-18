@@ -4,6 +4,10 @@ const StyledTrackList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  hr {
+    border: none;
+    border-top: 1px solid var(--light-grey);
+  }
 
   .track__item {
     display: grid;
@@ -69,11 +73,11 @@ const StyledTrackList = styled.ul`
     justify-content: flex-end;
     font-variant-numeric: tabular-nums;
 
-    /* @media (min-width: 768px) {
-      display: flex;
-      justify-content: flex-end;
-      font-variant-numeric: tabular-nums;
-    } */
+    & svg {
+      fill: var(--light-grey);
+      width: 20px;
+      aspect-ratio: 1;
+    }
   }
 `;
 

@@ -6,7 +6,7 @@ const SideMenu = () => (
     <StyledSideMenu>
       <div className="navbar">
         <div className="logo">
-          <Link to="/">
+          <Link title="Profile" to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 170.05 170.05"

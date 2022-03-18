@@ -89,6 +89,15 @@ const StyledHeader = styled.header`
       display: flex;
       align-items: center;
 
+      & a {
+        font-weight: bold;
+      }
+
+      & a:hover {
+        color: var(--white);
+        text-decoration: none;
+      }
+
       &:not(:last-of-type)::after {
         content: "•";
         display: block;
