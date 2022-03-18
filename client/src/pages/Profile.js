@@ -38,7 +38,7 @@ const Profile = () => {
 
     catchErrors(fetchData());
   }, []);
-  console.log(topTracks);
+  console.log(profile);
   return (
     <>
       {profile ? (
@@ -59,7 +59,15 @@ const Profile = () => {
                 </div>
               )}
               <div>
-                <h1 className="header__name">{profile.display_name}</h1>
+                <a
+                  className="header__name"
+                  rel="noreferrer"
+                  target="_blank"
+                  href={profile.external_urls.spotify}
+                  title="Spotify Profile"
+                >
+                  <h1 className="header__name">{profile.display_name}</h1>
+                </a>
                 <p className="header__meta">
                   {playlists && (
                     <span>

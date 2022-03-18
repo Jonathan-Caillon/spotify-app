@@ -67,6 +67,15 @@ const StyledHeader = styled.header`
     margin-bottom: var(--spacing-xs);
   }
 
+  a.header__name {
+    text-decoration: none;
+  }
+
+  a.header__name:hover {
+    text-decoration: none;
+    color: var(--green);
+  }
+
   h1.header__name {
     font-size: clamp(2.5rem, 10vw, 4.5rem);
     font-weight: 900;
@@ -74,7 +83,7 @@ const StyledHeader = styled.header`
     margin: var(--spacing-xs) 0;
 
     @media (min-width: 768px) {
-      margin: 0 0 var(--spacing-xs) -5px;
+      margin: var(--spacing-xs) 0 var(--spacing-xs) -5px;
     }
   }
 
