@@ -35,7 +35,7 @@ const StyledHeader = styled.header`
 
   img.header__img {
     width: 20%;
-    max-width: 200px;
+    max-width: 160px;
     min-width: 120px;
     box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
     background-color: var(--dark-grey);
