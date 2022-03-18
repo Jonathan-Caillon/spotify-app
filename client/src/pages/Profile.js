@@ -39,7 +39,6 @@ const Profile = () => {
 
     catchErrors(fetchData());
   }, []);
-  console.log(profile);
   return (
     <>
       {profile ? (
