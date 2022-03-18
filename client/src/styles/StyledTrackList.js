@@ -94,7 +94,7 @@ const StyledTrackList = styled.ul`
       fill: var(--light-grey);
       width: 20px;
       aspect-ratio: 1;
-      margin-right: 8px;
+      margin-right: 6px;
     }
   }
 `;
