@@ -15,6 +15,7 @@ import {
   TopTracks,
   Playlists,
   Playlist,
+  RecentlyPlayed,
 } from "./pages";
 
 import styled from "styled-components/macro";
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/top-tracks" element={<TopTracks />}></Route>
                 <Route path="/playlists/:id" element={<Playlist />}></Route>
                 <Route path="/playlists" element={<Playlists />}></Route>
+                <Route path="/recent" element={<RecentlyPlayed />}></Route>
                 <Route excat path="/" element={<Profile />}></Route>
               </Routes>
             </Router>

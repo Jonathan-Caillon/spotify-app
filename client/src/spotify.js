@@ -154,11 +154,11 @@ export const getCurrentUserPlaylists = (limit = 20) => {
 };
 
 /**
- * Get a List of Current User's Playlists
+ * Get a List of Current User's Recently Played Tracks
  * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-a-list-of-current-users-playlists
  * @returns {Promise}
  */
-export const getRecentlyPlayed = (limit = 20) => {
+export const getRecentlyPlayed = (limit = 30) => {
   return axios.get(`/me/player/recently-played?limit=${limit}`);
 };
 
