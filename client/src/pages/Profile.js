@@ -14,6 +14,7 @@ import {
   PlaylistsGrid,
   Loader,
 } from "../components";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -71,8 +72,10 @@ const Profile = () => {
                 <p className="header__meta">
                   {playlists && (
                     <span>
-                      {playlists.total} Playlist
-                      {playlists.total !== 1 ? "s" : ""}
+                      <Link title="Playlist" to="/playlists">
+                        {playlists.total} Playlist
+                        {playlists.total !== 1 ? "s" : ""}
+                      </Link>
                     </span>
                   )}
                   <span>

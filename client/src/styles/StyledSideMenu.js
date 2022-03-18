@@ -31,11 +31,11 @@ const StyledSideMenu = styled.div`
     margin-bottom: 30px;
   }
   .github svg {
-    fill: rgb(155, 155, 155);
-    height: 50px;
+    fill: var(--light-grey);
+    height: 40px;
   }
   .github a:hover svg {
-    fill: rgb(255, 255, 255);
+    fill: var(--white);
   }
   .menu {
     width: 100%;
@@ -57,7 +57,7 @@ const StyledSideMenu = styled.div`
 
   .menu ul li svg {
     height: 20px;
-    fill: rgb(155, 155, 155);
+    fill: var(--light-grey);
     margin-bottom: 7px;
   }
   .menu ul li {
@@ -66,17 +66,20 @@ const StyledSideMenu = styled.div`
     font-size: 0.75rem;
     text-align: center;
     list-style: none;
-    color: rgb(155, 155, 155);
+    color: var(--light-grey);
     text-decoration: none;
+    a.header__name {
+      text-decoration: none;
+    }
   }
   .menu ul li:hover {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     background-color: rgb(24, 24, 24);
     border-left: 5px solid var(--green);
     text-decoration: none;
   }
   .menu ul li:hover svg {
-    fill: rgb(255, 255, 255);
+    fill: var(--white);
   }
   .menu ul li a:hover {
     text-decoration: none;

@@ -31,6 +31,23 @@ const StyledTrackList = styled.ul`
       background-color: var(--dark-grey);
     }
   }
+  .track__item_title {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20px 1fr auto;
+    grid-gap: var(--spacing-md);
+    padding: var(--spacing-xs);
+    color: var(--light-grey);
+    font-size: var(--fz-sm);
+    border-radius: var(--border-radius-subtle);
+    transition: background-color 0.3s ease;
+    cursor: default;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 20px 4fr 2fr minmax(60px, 1fr);
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+  }
 
   .track__item__num {
     display: flex;
@@ -77,6 +94,7 @@ const StyledTrackList = styled.ul`
       fill: var(--light-grey);
       width: 20px;
       aspect-ratio: 1;
+      margin-right: 8px;
     }
   }
 `;

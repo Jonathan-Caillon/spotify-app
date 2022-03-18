@@ -81,15 +81,12 @@ const StyledHeader = styled.header`
     font-weight: 900;
     line-height: 1;
     margin: var(--spacing-xs) 0;
-
-    @media (min-width: 768px) {
-      margin: var(--spacing-xs) 0 var(--spacing-xs) -5px;
-    }
   }
 
   .header__meta {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: var(--fz-sm);
     color: var(--light-grey);
     margin: 0;

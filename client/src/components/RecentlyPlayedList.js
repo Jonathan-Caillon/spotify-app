@@ -5,7 +5,7 @@ const RecentlyPlayedList = ({ recentlyPlayeds }) => (
   <>
     {recentlyPlayeds && recentlyPlayeds.length ? (
       <StyledTrackList>
-        <li className="track__item">
+        <li className="track__item_title">
           <div className="track__item__num">#</div>
           <div className="track__item__title-group">Title</div>
           <div className="track__item__album overflow-ellipsis">Album</div>
