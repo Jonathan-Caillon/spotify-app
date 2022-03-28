@@ -1,6 +1,6 @@
 # Spotify Connected App
 
-End product of the "Build a Spotify Connected App" newline course
+Product base on "Build a Spotify Connected App" newline course
 
 Link : https://www.newline.co/courses/build-a-spotify-connected-app/welcome
 
