@@ -62,19 +62,21 @@ function App() {
           <Login />
         ) : (
           <>
-            <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
-            <Router>
-              <SideMenu />
-              <ScrollToTop />
-              <Routes>
-                <Route path="/top-artists" element={<TopArtists />}></Route>
-                <Route path="/top-tracks" element={<TopTracks />}></Route>
-                <Route path="/playlists/:id" element={<Playlist />}></Route>
-                <Route path="/playlists" element={<Playlists />}></Route>
-                <Route path="/recent" element={<RecentlyPlayed />}></Route>
-                <Route excat path="/" element={<Profile />}></Route>
-              </Routes>
-            </Router>
+            <div className="App-content">
+              <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
+              <Router>
+                <SideMenu />
+                <ScrollToTop />
+                <Routes>
+                  <Route path="/top-artists" element={<TopArtists />}></Route>
+                  <Route path="/top-tracks" element={<TopTracks />}></Route>
+                  <Route path="/playlists/:id" element={<Playlist />}></Route>
+                  <Route path="/playlists" element={<Playlists />}></Route>
+                  <Route path="/recent" element={<RecentlyPlayed />}></Route>
+                  <Route excat path="/" element={<Profile />}></Route>
+                </Routes>
+              </Router>
+            </div>
           </>
         )}
       </header>

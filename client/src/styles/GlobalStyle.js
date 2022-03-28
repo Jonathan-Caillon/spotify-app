@@ -117,7 +117,7 @@ const GlobalStyle = createGlobalStyle`
     padding: var(--spacing-xxl);
   }
 @media (min-width: 768px) {
-  .App-header {
+  .App-content {
     padding-left: 100px;
   }
 }
